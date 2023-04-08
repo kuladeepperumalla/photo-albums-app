@@ -1,13 +1,31 @@
 import {createSlice} from '@reduxjs/toolkit'
+import { fetchUsers } from '../thunks/fetchUsers';
 
-const UsersSlice = createSlice({
-    name:"userslice",
+const usersSlice = createSlice({
+    name:"users",
     initialState:{
-        data: []
+        data: [],
+        isLoading: false,
+        error: null,
     },
-    reducers:{
+    // extrabuilders allows to watch for some additional action types, 
+    // it watches for actions that had been dispatched 
+    // that are not inherently attached to the above slice 
+    extraReducers(builder){
+        builder.addCase(fetchUsers.pending, (state, action) => {
+            state.isLoading = true;
+        });
+        builder.addCase(fetchUsers.fulfilled, (state, action) => {
+            state.isLoading = false;
+            state.data = action.payload;
+
+        });
+        builder.addCase(fetchUsers.rejected, (state, action) => {
+            state.isLoading = false;
+            state.error = action.error;
+        });
 
     }
 })
 
-export const usersReducer = UsersSlice.reducer;
+export const usersReducer = usersSlice.reducer;
