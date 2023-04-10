@@ -13,6 +13,7 @@ const usersSlice = createSlice({
     // it watches for actions that had been dispatched 
     // that are not inherently attached to the above slice 
     extraReducers(builder){
+        // fetch users
         builder.addCase(fetchUsers.pending, (state, action) => {
             state.isLoading = true;
         });
@@ -25,7 +26,7 @@ const usersSlice = createSlice({
             state.isLoading = false;
             state.error = action.error;
         });
-
+        // add users
         builder.addCase(addUser.pending, (state, action) => {
             state.isLoading = true;
 
