@@ -1,27 +1,44 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, fetchUsers } from "../store";
 import Button from './Button'
 import Skeleton from "./Skeleton";
 
-function UsersList() {
+function useThunk(thunk){
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const dispatch = useDispatch();
-  const { isLoading, data, error } = useSelector((state) => {
+
+  const runThunk = useCallback(() => {
+    setIsLoading(true);
+    dispatch(thunk())
+    .unwrap()
+    .catch((err) => setError(err))
+    .finally(() => setIsLoading(true))
+  }, [dispatch, thunk]);
+
+  return [runThunk, isLoading, error]
+}
+
+function UsersList() {
+  const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers)
+  const dispatch = useDispatch();
+  const { data } = useSelector((state) => {
     return state.users;
   });
 
   useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
+    doFetchUsers();
+  }, [doFetchUsers]);
 
   const handleUserAdd = () => {
     dispatch(addUser())
   }
 
-  if (isLoading) {
+  if (isLoadingUsers) {
     return <Skeleton times={6} className="h-10 w-full" />;
   }
-  if (error) {
+  if (loadingUsersError) {
     return <div>error!!!</div>;
   }
 
