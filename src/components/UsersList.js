@@ -1,28 +1,15 @@
-import { useCallback, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import {useEffect} from "react";
+import {useSelector } from "react-redux";
 import { addUser, fetchUsers } from "../store";
 import Button from './Button'
 import Skeleton from "./Skeleton";
+import { useThunk } from "../hooks/use-thunk";
 
-function useThunk(thunk){
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const dispatch = useDispatch();
 
-  const runThunk = useCallback(() => {
-    setIsLoading(true);
-    dispatch(thunk())
-    .unwrap()
-    .catch((err) => setError(err))
-    .finally(() => setIsLoading(true))
-  }, [dispatch, thunk]);
-
-  return [runThunk, isLoading, error]
-}
 
 function UsersList() {
   const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers)
-  const dispatch = useDispatch();
+  const [doCreateUser, isCreateingUser, creatingUserError] = useThunk(addUser)
   const { data } = useSelector((state) => {
     return state.users;
   });
@@ -32,7 +19,7 @@ function UsersList() {
   }, [doFetchUsers]);
 
   const handleUserAdd = () => {
-    dispatch(addUser())
+    doCreateUser()
   }
 
   if (isLoadingUsers) {
@@ -54,7 +41,13 @@ function UsersList() {
     <div>
       <div className="flex flex-row justify-between m-3">
           <h1 className="m-2 text-xl">Users</h1>
-          <Button onClick={handleUserAdd}>+ Add User</Button>
+          {
+            isCreateingUser ? (
+              'Creating user...'
+            ) : (
+              <Button onClick={handleUserAdd}>+ Add User</Button>
+            )}
+            { creatingUserError && 'error!!'}
       </div>
       {renderedUsers}
     </div>
