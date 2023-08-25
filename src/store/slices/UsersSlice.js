@@ -1,20 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { fetchUsers } from "../thunks/fetchUsers";
-import { addUser } from "../thunks/addUser";
-import { removeUser } from "../thunks/removeUser";
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchUsers } from '../thunks/fetchUsers';
+import { addUser } from '../thunks/addUser';
+import { removeUser } from '../thunks/removeUser';
 
 const usersSlice = createSlice({
-  name: "users",
+  name: 'users',
   initialState: {
-    data: [],
     isLoading: false,
+    data: [],
     error: null,
   },
-  // extrabuilders allows to watch for some additional action types,
-  // it watches for actions that had been dispatched
-  // that are not inherently attached to the above slice
   extraReducers(builder) {
-    // fetch users
     builder.addCase(fetchUsers.pending, (state, action) => {
       state.isLoading = true;
     });
@@ -26,7 +22,7 @@ const usersSlice = createSlice({
       state.isLoading = false;
       state.error = action.error;
     });
-    // add users
+
     builder.addCase(addUser.pending, (state, action) => {
       state.isLoading = true;
     });
@@ -35,17 +31,18 @@ const usersSlice = createSlice({
       state.data.push(action.payload);
     });
     builder.addCase(addUser.rejected, (state, action) => {
+      state.isLoading = false;
       state.error = action.error;
     });
-    // Remove Case
+
     builder.addCase(removeUser.pending, (state, action) => {
       state.isLoading = true;
     });
     builder.addCase(removeUser.fulfilled, (state, action) => {
       state.isLoading = false;
       state.data = state.data.filter((user) => {
-        return user.id!== action.payload.id
-      })
+        return user.id !== action.payload.id;
+      });
     });
     builder.addCase(removeUser.rejected, (state, action) => {
       state.isLoading = false;
