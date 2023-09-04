@@ -1,4 +1,4 @@
-import { FaTrashCan } from 'react-icons/fa';
+import { FaTrashCan } from 'react-icons/fa6';
 import { useRemovePhotoMutation } from '../store';
 
 function PhotosListItem({ photo }) {

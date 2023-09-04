@@ -1,5 +1,5 @@
 import className from 'classnames';
-import { GoSync } from 'react-icons/go';
+import { LiaSyncAltSolid } from 'react-icons/lia';
 
 function Button({
   children,
@@ -35,7 +35,7 @@ function Button({
 
   return (
     <button {...rest} disabled={loading} className={classes}>
-      {loading ? <GoSync className="animate-spin" /> : children}
+      {loading ? <LiaSyncAltSolid className="animate-spin" /> : children}
     </button>
   );
 }

@@ -1,4 +1,4 @@
-import { GoTrashcan } from 'react-icons/go';
+import { FaTrashCan } from 'react-icons/fa6';
 import { useRemoveAlbumMutation } from '../store';
 import Button from './Button';
 import ExpandablePanel from './ExpandablePanel';
@@ -18,7 +18,7 @@ function AlbumsListItem({ album }) {
         loading={results.isLoading}
         onClick={handleRemoveAlbum}
       >
-        <GoTrashcan />
+        <FaTrashCan />
       </Button>
       {album.title}
     </>
