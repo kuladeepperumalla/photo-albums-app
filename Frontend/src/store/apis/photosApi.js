@@ -4,7 +4,8 @@ import { faker } from '@faker-js/faker';
 const photosApi = createApi({
   reducerPath: 'photos',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3005',
+    // baseUrl: 'http://localhost:3005',
+    baseUrl: 'https://photos-albums-app-mockserver.onrender.com',
   }),
   endpoints(builder) {
     return {

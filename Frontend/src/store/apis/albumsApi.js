@@ -11,7 +11,7 @@ const pause = (duration) => {
 const albumsApi = createApi({
   reducerPath: 'albums',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3005',
+    baseUrl: 'https://photos-albums-app-mockserver.onrender.com',
     fetchFn: async (...args) => {
       // REMOVE FOR PRODUCTION
       await pause(1000);
