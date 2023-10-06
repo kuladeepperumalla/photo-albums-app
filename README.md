@@ -4,7 +4,7 @@
 
 <img src="./public/images/mainscreen.png">
 
-This project is part of my proof of concept on React Redux, Reusable components, RESTful API, JSON server, DOM manipulation, Hooks, Slices and Thunks. Live demonstration of the application is deployed on Render, Please click here -> [Demo](https://kuladeepperumalla.github.io/Gaming-world---online-game-shop/) (Note: Due to the free hosting service, server loads after a minute! Thanks for your patience! <3 )
+This project is part of my proof of concept on React Redux, Reusable components, RESTful API, JSON server, DOM manipulation, Hooks, Slices and Thunks. Live demonstration of the application is deployed on Render, Please click here -> [Demo](s://kuladeepperumalla.github.io/Gaming-world---online-game-shop/) (Note: Due to the free hosting service, server loads after a minute! Thanks for your patience! <3 )
 
 
 ## Table of Contents
@@ -43,16 +43,16 @@ This project is part of my proof of concept on React Redux, Reusable components,
 > Add/Delete User
 
 #### Get all users
-```http
+```
   GET photos-albums-app-mockserver.onrender.com/users/
 ```
 #### Post user
-```http
+```
   POST photos-albums-app-mockserver.onrender.com/users/{id}
 ```
 
 #### Delete user
-```http
+```
   DELETE photos-albums-app-mockserver.onrender.com/users/{id}
 ```
 
@@ -66,13 +66,13 @@ This project is part of my proof of concept on React Redux, Reusable components,
 > Add/Delete Album
 
 #### Get all Album
-```http
+```
   GET photos-albums-app-mockserver.onrender.com/albums/
 ```
-```http
+```
   POST photos-albums-app-mockserver.onrender.com/albums/{id}
 ```
-```http
+```
   DELETE photos-albums-app-mockserver.onrender.com/albums/{id}
 ```
 
@@ -85,13 +85,13 @@ This project is part of my proof of concept on React Redux, Reusable components,
 > Add/Delete Photos
 
 #### Get all users
-```http
+```
   GET photos-albums-app-mockserver.onrender.com/photos/
 ```
-```http
+```
   POST photos-albums-app-mockserver.onrender.com/photos/{id}
 ```
-```http
+```
   DELETE photos-albums-app-mockserver.onrender.com/photos/{id}
 ```
 
@@ -107,7 +107,7 @@ This project is part of my proof of concept on React Redux, Reusable components,
 Clone the project
 
 ```bash
-  git clone https://github.com/kuladeepperumalla/photo-albums-app.git
+  git clone s://github.com/kuladeepperumalla/photo-albums-app.git
 ```
 
 Go to the project directory
@@ -137,14 +137,14 @@ Start the front end server
 
 ---
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![JSON](https://img.shields.io/badge/JSON-gray?style=for-the-badge&logo=json&logoColor=yellow)
-![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](s://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![JSON](s://img.shields.io/badge/JSON-gray?style=for-the-badge&logo=json&logoColor=yellow)
+![SASS](s://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![CSS3](s://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![NPM](s://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
+![HTML5](s://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
 
 ## Developer
 
-This project is brought to you by  [Kuladeep Perumalla](https://github.com/kuladeepperumalla)).
+This project is brought to you by  [Kuladeep Perumalla](s://github.com/kuladeepperumalla)).
