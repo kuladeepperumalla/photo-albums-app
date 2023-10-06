@@ -65,13 +65,15 @@ This project is part of my proof of concept on React Redux, Reusable components,
 
 > Add/Delete Album
 
-#### Get all Album
+#### Get Albums
 ```
   GET photos-albums-app-mockserver.onrender.com/albums/
 ```
+#### POST Albums
 ```
   POST photos-albums-app-mockserver.onrender.com/albums/{id}
 ```
+#### Delete Albums
 ```
   DELETE photos-albums-app-mockserver.onrender.com/albums/{id}
 ```
@@ -84,13 +86,15 @@ This project is part of my proof of concept on React Redux, Reusable components,
 
 > Add/Delete Photos
 
-#### Get all users
+#### Get  photos
 ```
   GET photos-albums-app-mockserver.onrender.com/photos/
 ```
+#### POST photos
 ```
   POST photos-albums-app-mockserver.onrender.com/photos/{id}
 ```
+#### Delete photos
 ```
   DELETE photos-albums-app-mockserver.onrender.com/photos/{id}
 ```
@@ -138,6 +142,8 @@ Start the front end server
 ---
 
 ![JavaScript](s://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](s://img.shields.io/badge/React-%231572B6.svg?style=for-the-badge&logo=react&logoColor=white)
+![Redux](s://img.shields.io/badge/Redux-%231572B6.svg?style=for-the-badge&logo=react&logoColor=white)
 ![JSON](s://img.shields.io/badge/JSON-gray?style=for-the-badge&logo=json&logoColor=yellow)
 ![SASS](s://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![CSS3](s://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
