@@ -32,7 +32,7 @@ This project is part of my proof of concept on React Redux, Reusable components,
 
 ## Features
 
-> A few of the things you can do with Gaming world:
+> A few of the things you can do with Photo Albums App:
 > - Add/Delete Users by clicking button
 > - Add/Delete albums
 > - Add/Delete phhotos
