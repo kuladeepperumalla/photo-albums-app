@@ -27,7 +27,7 @@ This project is part of my proof of concept on React Redux, Reusable components,
 - Users, Albums, Photos can be Added and Deleted
 - isLoading and isError used all accross the application to handle exceptions in case of bad server or 404 responses from the API
 - Look into [features](#Features) for code snippets and more understanding.  
-
+<img src="./public/images/intro.gif">
 ****
 
 ## Features
