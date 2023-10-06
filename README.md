@@ -1,6 +1,6 @@
 # Photo Albums App  
 
-> A simple demonstration of my knowledge on reusable components like Accordions, Buttons, Panel, Thunks and may more using JSON server as back end and tailwind CSS for UI and ClassNames library for more customization of classnames and facker.JS for User data, album names and loremflicker for random images generated in the album.
+> A simple demonstration of my knowledge on reusable components like Accordions, Buttons, Panel, Thunks and many more using JSON server as back end and tailwind CSS for UI and ClassNames library for more customization of classnames and facker.JS for User data, album names and loremflicker for random images generated in the album.
 
 <img src="./public/images/mainscreen.png">
 
@@ -11,6 +11,7 @@ This project is part of my proof of concept on React Redux, Reusable components,
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [API reference](#API-reference)
 - [Build Process](#build-process)
 - [Developer](#Developer)
 
@@ -21,7 +22,7 @@ This project is part of my proof of concept on React Redux, Reusable components,
 ## Introduction
 
 > Photo Albums App generates random users and users can add any number of photos generated from the API. (This App is built for POC purpose only)
-- This is a single page web application where all the data is fetched and requests are made to API without reloding the page.
+- This is a single page web application where all the data is fetched and requests are made to API without reloding the page by using proide and invalidating tags.
 - Used accordions to expand the data on click and add photos inside the expandable pannels
 - Users, Albums, Photos can be Added and Deleted
 - isLoading and isError used all accross the application to handle exceptions in case of bad server or 404 responses from the API
@@ -31,18 +32,30 @@ This project is part of my proof of concept on React Redux, Reusable components,
 
 ## Features
 
-A few of the things you can do with Gaming world:
+> A few of the things you can do with Gaming world:
+> - Add/Delete Users by clicking button
+> - Add/Delete albums
+> - Add/Delete phhotos
 
 ****
+## API Reference
 
-
-> Add a User
-> -
+> Add/Delete User
 
 #### Get all users
 ```http
-  GET /https://photos-albums-app-mockserver.onrender.com/users/
+  GET photos-albums-app-mockserver.onrender.com/users/
 ```
+#### Post user
+```http
+  POST photos-albums-app-mockserver.onrender.com/users/{id}
+```
+
+#### Delete user
+```http
+  DELETE photos-albums-app-mockserver.onrender.com/users/{id}
+```
+
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
@@ -50,10 +63,43 @@ A few of the things you can do with Gaming world:
 | `id`      | `number` | **Required**.              |
 
 
+> Add/Delete Album
 
+#### Get all Album
+```http
+  GET photos-albums-app-mockserver.onrender.com/albums/
+```
+```http
+  POST photos-albums-app-mockserver.onrender.com/albums/{id}
+```
+```http
+  DELETE photos-albums-app-mockserver.onrender.com/albums/{id}
+```
 
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `userId`  | `number` | **Required**.              |
+| `title`   | `string` | **Required**.              |
+| `id`      | `number` | **Required**.              |
 
-## Build Process
+> Add/Delete Photos
+
+#### Get all users
+```http
+  GET photos-albums-app-mockserver.onrender.com/photos/
+```
+```http
+  POST photos-albums-app-mockserver.onrender.com/photos/{id}
+```
+```http
+  DELETE photos-albums-app-mockserver.onrender.com/photos/{id}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `albumId` | `number` | **Required**.              |
+| `url`     | `string` | **Required**.              |
+| `id`      | `number` | **Required**.              |
 
 
 ## 💻 Run Locally
@@ -61,13 +107,13 @@ A few of the things you can do with Gaming world:
 Clone the project
 
 ```bash
-  git clone 
+  git clone https://github.com/kuladeepperumalla/photo-albums-app.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd 
+  cd photo-albums-app
 ```
 
 Install dependencies
@@ -76,7 +122,12 @@ Install dependencies
   npm install
 ```
 
-Start the server
+Start the backend server
+
+```bash
+  npm run start:server
+```
+Start the front end server
 
 ```bash
   npm run start
